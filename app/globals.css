@@ -1,0 +1,212 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import "tw-animate-css";
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "design-kit-icons";
+  src: url("https://file.nucleogov.com.br/webfonts/design-kit-icons/fonts/design-kit-icons.woff") format("woff"),
+       url("https://file.nucleogov.com.br/webfonts/design-kit-icons/fonts/design-kit-icons.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "nucleoweb-essentials";
+  src: url("https://www.goiania.go.gov.br/wp-content/plugins/nucleoweb-essentials/assets/fonts/nucleoweb-essentials/fonts/nucleoweb-essentials.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NúcleoWeb Material Icons Default";
+  src: url("https://www.goiania.go.gov.br/wp-content/plugins/nucleoweb-essentials/assets/fonts/nucleoweb-material-icons/fonts/nucleoweb-material-icons-default.woff2?v=1.0.1") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+[data-icon]:before {
+  font-family: "design-kit-icons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+[class^="dkicons-"]:before,
+[class*=" dkicons-"]:before {
+  font-family: "design-kit-icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calendar:before, .dkicons-calendar:before { content: "\68"; }
+.icon-search:before, .dkicons-search:before { content: "\e004"; }
+.icon-close:before, .dkicons-close:before { content: "\7a"; }
+.icon-check:before, .dkicons-check:before { content: "\6e"; }
+.icon-chevron-left:before, .dkicons-chevron-left:before { content: "\72"; }
+.icon-chevron-right:before, .dkicons-chevron-right:before { content: "\73"; }
+.icon-accessibility:before, .dkicons-accessibility:before { content: "\e025"; }
+.icon-menu:before, .dkicons-menu:before { content: "\2b"; }
+.icon-user:before, .dkicons-user:before { content: "\e01d"; }
+.icon-users:before, .dkicons-users:before { content: "\e01e"; }
+.icon-facebook:before, .dkicons-facebook:before { content: "\50"; }
+.icon-instagram:before, .dkicons-instagram:before { content: "\38"; }
+.icon-youtube:before, .dkicons-youtube:before { content: "\e02b"; }
+.icon-twitter:before, .dkicons-twitter:before { content: "\e01b"; }
+.icon-phone:before, .dkicons-chat-phone:before { content: "\6b"; }
+.icon-document:before, .dkicons-search-doc:before { content: "\e005"; }
+.icon-city:before, .dkicons-city:before { content: "\77"; }
+.icon-high-contrast:before, .dkicons-high-contrast:before { content: "\33"; }
+.icon-money:before, .dkicons-circle-money:before { content: "\75"; }
+.icon-link:before, .dkicons-link:before { content: "\27"; }
+
+:root {
+  --background-color: #E1E5E7;
+  --navy: #002e47;
+  --navy-light: #003856;
+  --emerald: #f36e22;
+  --emerald-light: #fff1ec;
+  --emerald-hover: #f27730;
+  --fonte-escura: #2A454A;
+  --fonte-clara: #7A8987;
+  --fonte-branca: #FFFFFF;
+  --branco: #FFFFFF;
+  --cinza4: #BBC7C7;
+  --cinza3: #CCD3D5;
+  --cinza2: #E1E7E7;
+  --cinza1: #F2F4F4;
+  --nwe-primary-color: #003f68;
+  --nwe-secondary-color: #f36e22;
+  --font-family-default: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body.alto_contraste {
+  --background-color: #000000 !important;
+  --navy: #000000 !important;
+  --navy-light: #111111 !important;
+  --emerald: #ffff00 !important;
+  --emerald-light: #333300 !important;
+  --emerald-hover: #e6e600 !important;
+  --fonte-escura: #ffffff !important;
+  --fonte-clara: #ffff88 !important;
+  --fonte-branca: #ffffff !important;
+  --branco: #000000 !important;
+  --cinza4: #ffffff !important;
+  --cinza3: #222222 !important;
+  --cinza2: #111111 !important;
+  --cinza1: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.alto_contraste a {
+  color: #ffff00 !important;
+}
+
+body.alto_contraste button {
+  border-color: #ffff00 !important;
+  color: #ffff00 !important;
+}
+
+body.alto_contraste .bg-white,
+body.alto_contraste .bg-slate-50,
+body.alto_contraste .bg-slate-100 {
+  background-color: #000000 !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--fonte-escura);
+  font-family: var(--font-family-default);
+}
+
+/* Header Top 4-Color Stripe */
+.template-part-header-top-bar {
+  display: flex;
+  height: 8px;
+  width: 100%;
+}
+.template-part-header-top-bar .stripe {
+  flex: 1;
+}
+.template-part-header-top-bar .yellow { background-color: #fff20c; }
+.template-part-header-top-bar .orange { background-color: #f36e22; }
+.template-part-header-top-bar .green { background-color: #114e23; }
+.template-part-header-top-bar .blue { background-color: #003c5c; }
+
+/* Main Header Container */
+.template-part-header-bottom {
+  background: var(--navy-light);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.template-part-header-bottom .main-header {
+  align-items: center;
+  display: flex;
+  min-height: 110px;
+  width: 100%;
+}
+
+/* Quick Access / Most Accessed */
+.template-part-most-accessed.layout-2023 {
+  background: var(--branco);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.template-part-most-accessed.layout-2023 .menu-tabs-links {
+  background: var(--cinza1);
+  border-radius: 50px;
+  height: 52px;
+  padding: 5px;
+  position: relative;
+  display: flex;
+}
+
+/* Post Cards */
+.template-part-component-feed-post {
+  background: var(--branco);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  color: var(--fonte-escura);
+  transition: all 0.25s ease-in-out;
+  overflow: hidden;
+}
+
+.template-part-component-feed-post:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+/* Typography Overrides */
+.prose h1, .prose h2, .prose h3 {
+  color: var(--fonte-escura);
+}
+.prose a {
+  color: var(--emerald);
+  text-decoration: underline;
+}

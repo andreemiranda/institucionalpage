@@ -1,0 +1,6 @@
+{
+  "name": "Prefeitura de Goiânia",
+  "description": "Portal Oficial de Notícias e Serviços da Prefeitura Municipal de Goiânia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
