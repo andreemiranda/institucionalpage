@@ -11,8 +11,10 @@ import {
   WPQueryParams,
 } from '@/types/wordpress';
 
-export const WP_BASE_URL = 'https://www.goiania.go.gov.br';
-export const WP_API_URL = `${WP_BASE_URL}/wp-json/wp/v2`;
+export const WP_BASE_URL =
+  process.env.NEXT_PUBLIC_WP_BASE_URL || 'https://www.goiania.go.gov.br';
+export const WP_API_URL =
+  process.env.NEXT_PUBLIC_WP_API_URL || `${WP_BASE_URL}/wp-json/wp/v2`;
 export const WP_MENUS_API_URL = `${WP_BASE_URL}/wp-json/menus/v1`;
 
 const DEFAULT_TIMEOUT_MS = 3500;
@@ -142,6 +144,7 @@ export const FALLBACK_CATEGORIES: WPCategory[] = [
 export const FALLBACK_POSTS: WPPost[] = [
   {
     id: 101,
+    type: 'post',
     date: '2026-03-30T10:30:00',
     slug: 'prefeitura-amplia-programa-saude-da-familia-com-novas-equipes-multidisciplinares',
     link: '/noticia/prefeitura-amplia-programa-saude-da-familia-com-novas-equipes-multidisciplinares',
@@ -170,6 +173,7 @@ export const FALLBACK_POSTS: WPPost[] = [
   },
   {
     id: 102,
+    type: 'post',
     date: '2026-03-29T14:15:00',
     slug: 'obras-de-recapeamento-avancam-em-avenidas-estrategicas-da-capital-com-asfalto-quente',
     link: '/noticia/obras-de-recapeamento-avancam-em-avenidas-estrategicas-da-capital-com-asfalto-quente',
@@ -196,6 +200,7 @@ export const FALLBACK_POSTS: WPPost[] = [
   },
   {
     id: 103,
+    type: 'post',
     date: '2026-03-28T09:00:00',
     slug: 'educacao-conecta-inaugura-laboratorios-de-robotica-em-todas-as-escolas-municipais',
     link: '/noticia/educacao-conecta-inaugura-laboratorios-de-robotica-em-todas-as-escolas-municipais',
@@ -222,6 +227,7 @@ export const FALLBACK_POSTS: WPPost[] = [
   },
   {
     id: 104,
+    type: 'post',
     date: '2026-03-27T16:45:00',
     slug: 'mutirao-da-cidadania-atende-mais-de-25-mil-familias-com-servicos-integrados-e-lazer',
     link: '/noticia/mutirao-da-cidadania-atende-mais-de-25-mil-familias-com-servicos-integrados-e-lazer',
@@ -247,6 +253,7 @@ export const FALLBACK_POSTS: WPPost[] = [
   },
   {
     id: 105,
+    type: 'post',
     date: '2026-03-26T11:20:00',
     slug: 'parques-de-goiania-recebem-acoes-de-preservacao-e-novos-equipamentos-de-ginastica-ao-ar-livre',
     link: '/noticia/parques-de-goiania-recebem-acoes-de-preservacao-e-novos-equipamentos-de-ginastica-ao-ar-livre',
@@ -272,6 +279,7 @@ export const FALLBACK_POSTS: WPPost[] = [
   },
   {
     id: 106,
+    type: 'post',
     date: '2026-03-25T08:40:00',
     slug: 'facilidades-do-iptu-2026-contribuintes-aproveitam-desconto-de-ate-10-por-cento-na-cota-unica',
     link: '/noticia/facilidades-do-iptu-2026-contribuintes-aproveitam-desconto-de-ate-10-por-cento-na-cota-unica',
@@ -300,6 +308,7 @@ export const FALLBACK_POSTS: WPPost[] = [
 export const FALLBACK_PAGES: WPPage[] = [
   {
     id: 201,
+    type: 'page',
     date: '2026-01-01T00:00:00',
     slug: 'sobre-a-prefeitura',
     link: '/pagina/sobre-a-prefeitura',
@@ -315,6 +324,7 @@ export const FALLBACK_PAGES: WPPage[] = [
   },
   {
     id: 202,
+    type: 'page',
     date: '2026-01-01T00:00:00',
     slug: 'portal-da-transparencia',
     link: '/pagina/portal-da-transparencia',
@@ -327,6 +337,7 @@ export const FALLBACK_PAGES: WPPage[] = [
   },
   {
     id: 203,
+    type: 'page',
     date: '2026-01-01T00:00:00',
     slug: 'ouvidoria-e-acesso-a-informacao',
     link: '/pagina/ouvidoria-e-acesso-a-informacao',
