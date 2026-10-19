@@ -178,13 +178,13 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center justify-between w-full md:w-auto">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="bg-white/10 p-2 rounded-lg backdrop-blur-sm group-hover:bg-white/20 transition-all">
+              <div className="bg-white/10 p-2 rounded-xl backdrop-blur-sm group-hover:bg-white/20 transition-all flex items-center gap-3">
                 <Image 
-                  src="https://www.goiania.go.gov.br/wp-content/themes/prefeitura-goiania/assets/images/logo.png" 
+                  src="/logo-white.svg" 
                   alt="Prefeitura de Goiânia" 
-                  width={240} 
-                  height={80} 
-                  className="h-12 w-auto brightness-0 invert" 
+                  width={220} 
+                  height={60} 
+                  className="h-11 w-auto" 
                   priority
                 />
               </div>

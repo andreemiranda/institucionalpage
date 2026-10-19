@@ -12,6 +12,20 @@ import {
 export const metadata = {
   title: 'Carta de Serviços ao Cidadão • Prefeitura de Goiânia',
   description: 'Guia completo de serviços municipais, emissão de guias, agendamentos, licenças e requerimentos.',
+  openGraph: {
+    type: 'website',
+    title: 'Carta de Serviços • Prefeitura de Goiânia',
+    description: 'Catálogo oficial de serviços municipais para cidadãos, empresas e servidores.',
+    url: 'https://goiania.go.gov.br/servicos',
+    siteName: 'Prefeitura de Goiânia',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Serviços de Goiânia' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Carta de Serviços • Prefeitura de Goiânia',
+    description: 'Acesse serviços municipais, certidões e agendamentos.',
+    images: ['/og-image.png'],
+  },
 };
 
 export default async function ServicosPage({

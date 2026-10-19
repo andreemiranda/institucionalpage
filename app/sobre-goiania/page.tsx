@@ -5,6 +5,20 @@ import { Trees, Landmark, Building } from 'lucide-react';
 export const metadata = {
   title: 'Sobre Goiânia • A Capital Verde do Brasil',
   description: 'Conheça a história, o patrimônio Art Déco, os parques urbanos e os dados gerais de Goiânia, capital de Goiás.',
+  openGraph: {
+    type: 'website',
+    title: 'Sobre Goiânia • A Capital Verde do Brasil',
+    description: 'História, arquitetura Art Déco, parques urbanos e dados da capital de Goiás.',
+    url: 'https://goiania.go.gov.br/sobre-goiania',
+    siteName: 'Prefeitura de Goiânia',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Sobre Goiânia' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sobre Goiânia • Capital de Goiás',
+    description: 'História e dados gerais da capital verde do Brasil.',
+    images: ['/og-image.png'],
+  },
 };
 
 export default function SobreGoianiaPage() {

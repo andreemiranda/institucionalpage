@@ -126,17 +126,12 @@ export function Header() {
         <Link href="/" className="flex items-center gap-3.5 group">
           <div className="relative w-12 h-12 flex-shrink-0 bg-[#00473E] rounded-xl flex items-center justify-center p-2 shadow-inner group-hover:scale-105 transition-transform">
             <Image
-              src="/brasao.png"
+              src="/brasao.svg"
               alt="Brasão Oficial de Goiânia"
               width={40}
               height={40}
               className="object-contain"
               priority
-              onError={(e) => {
-                // Graceful fallback if static image has not completed loading
-                const target = e.target as HTMLElement;
-                target.style.display = 'none';
-              }}
             />
             <Building className="w-6 h-6 text-[#FAAE2B] absolute inset-0 m-auto opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>

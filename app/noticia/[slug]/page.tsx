@@ -1,22 +1,78 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import { getPostBySlug, getPosts } from '@/lib/wp';
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatPostDate, stripHtml } from '@/lib/utils';
 import { notFound } from 'next/navigation';
-import { 
-  Calendar, 
-  User, 
-  Facebook, 
-  Twitter, 
-  MessageCircle, 
-  ArrowLeft, 
-  Newspaper
+import { RenderHtml } from '@/components/RenderHtml';
+import {
+  Calendar,
+  User,
+  Facebook,
+  Twitter,
+  MessageCircle,
+  ArrowLeft,
+  Newspaper,
+  Share2,
 } from 'lucide-react';
 
 export const revalidate = 60;
 
-export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: 'Notícia não encontrada',
+      description: 'A notícia solicitada não foi encontrada no portal da Prefeitura de Goiânia.',
+    };
+  }
+
+  const title = stripHtml(post.title.rendered);
+  const description = stripHtml(post.excerpt?.rendered || post.content.rendered).slice(0, 160);
+  const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/og-image.png';
+
+  return {
+    title,
+    description,
+    openGraph: {
+      type: 'article',
+      title,
+      description,
+      url: `https://goiania.go.gov.br/noticia/${slug}`,
+      siteName: 'Prefeitura de Goiânia',
+      publishedTime: post.date,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [imageUrl],
+      site: '@prefeiturago',
+      creator: '@prefeiturago',
+    },
+  };
+}
+
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
@@ -25,22 +81,60 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   }
 
   const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
-  const authorName = post._embedded?.['author']?.[0]?.name || 'Secretaria Municipal de Comunicação • Secom';
+  const authorName =
+    post._embedded?.['author']?.[0]?.name ||
+    'Secretaria Municipal de Comunicação • Secom';
   const categories = post._embedded?.['wp:term']?.[0] || [];
 
   // Fetch recent posts for sidebar / related
   const { posts: relatedPosts } = await getPosts(1, 4);
-  const otherPosts = relatedPosts.filter(p => p.id !== post.id).slice(0, 3);
+  const otherPosts = relatedPosts.filter((p) => p.id !== post.id).slice(0, 3);
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: stripHtml(post.title.rendered),
+    description: stripHtml(post.excerpt?.rendered || '').slice(0, 200),
+    image: imageUrl ? [imageUrl] : ['https://goiania.go.gov.br/og-image.png'],
+    datePublished: post.date,
+    dateModified: post.date,
+    author: [
+      {
+        '@type': 'Organization',
+        name: authorName,
+        url: 'https://goiania.go.gov.br',
+      },
+    ],
+    publisher: {
+      '@type': 'GovernmentOrganization',
+      name: 'Prefeitura Municipal de Goiânia',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://goiania.go.gov.br/brasao.png',
+      },
+    },
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+
       {/* Breadcrumb */}
       <nav className="text-xs text-slate-500 flex items-center gap-2">
-        <Link href="/" className="hover:text-[#f36e22] transition-colors">Início</Link>
+        <Link href="/" className="hover:text-[#f36e22] transition-colors">
+          Início
+        </Link>
         <span>/</span>
-        <Link href="/noticias" className="hover:text-[#f36e22] transition-colors">Notícias</Link>
+        <Link href="/noticias" className="hover:text-[#f36e22] transition-colors">
+          Notícias
+        </Link>
         <span>/</span>
-        <span className="text-[#002e47] font-semibold truncate max-w-xs">{stripHtml(post.title.rendered)}</span>
+        <span className="text-[#002e47] font-semibold truncate max-w-xs">
+          {stripHtml(post.title.rendered)}
+        </span>
       </nav>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -49,7 +143,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <header className="space-y-4">
             {categories.length > 0 && (
               <div className="flex flex-wrap gap-2">
-                {categories.map(cat => (
+                {categories.map((cat) => (
                   <Link
                     key={cat.id}
                     href={`/categoria/${cat.slug}`}
@@ -61,7 +155,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               </div>
             )}
 
-            <h1 
+            <h1
               className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#002e47] leading-tight"
               dangerouslySetInnerHTML={{ __html: post.title.rendered }}
             />
@@ -75,17 +169,19 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Calendar className="w-4 h-4 text-[#f36e22]" />
-                  <time>
-                    {formatPostDate(post.date, 'with-time')}
-                  </time>
+                  <time>{formatPostDate(post.date, 'with-time')}</time>
                 </div>
               </div>
 
               {/* Social Share links */}
               <div className="flex items-center gap-2">
-                <span className="font-bold text-slate-400 mr-1">Compartilhar:</span>
+                <span className="font-bold text-slate-400 mr-1 flex items-center gap-1">
+                  <Share2 className="w-3 h-3" /> Compartilhar:
+                </span>
                 <a
-                  href={`https://api.whatsapp.com/send?text=${encodeURIComponent(stripHtml(post.title.rendered))}`}
+                  href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                    stripHtml(post.title.rendered)
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-7 h-7 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center transition-colors"
@@ -94,7 +190,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   <MessageCircle className="w-3.5 h-3.5" />
                 </a>
                 <a
-                  href="https://www.facebook.com/sharer/sharer.php"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https://goiania.go.gov.br/noticia/${slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-7 h-7 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center transition-colors"
@@ -103,7 +199,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   <Facebook className="w-3.5 h-3.5" />
                 </a>
                 <a
-                  href="https://twitter.com/intent/tweet"
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                    stripHtml(post.title.rendered)
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-7 h-7 rounded-full bg-sky-500 hover:bg-sky-600 text-white flex items-center justify-center transition-colors"
@@ -131,17 +229,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
           {/* Excerpt Lead */}
           {post.excerpt?.rendered && (
-            <div 
+            <div
               className="text-base sm:text-lg font-medium text-slate-700 bg-slate-50 p-5 rounded-2xl border-l-4 border-[#f36e22] italic leading-relaxed"
               dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
             />
           )}
 
-          {/* Main Body HTML */}
-          <div 
-            className="prose prose-base sm:prose-lg max-w-none text-[#2A454A] leading-relaxed [&>p]:mb-5 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-[#002e47] [&>h3]:text-xl [&>h3]:font-bold [&>h3]:text-[#002e47] [&>img]:rounded-xl [&>figure]:my-6"
-            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-          />
+          {/* Main Body HTML with automated video embedding */}
+          <RenderHtml html={post.content.rendered} />
 
           <div className="pt-8 border-t border-slate-100 flex items-center justify-between">
             <Link

@@ -3,9 +3,30 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getPosts, getCategories } from '@/lib/wp';
 import { formatPostDate, stripHtml } from '@/lib/utils';
+import type { Metadata } from 'next';
 import { Search, ArrowLeft, ArrowRight, ChevronRight, Newspaper } from 'lucide-react';
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: 'Notícias de Goiânia • Sala de Imprensa Oficial',
+  description:
+    'Acompanhe as últimas notícias, comunicados, campanhas de vacinação, obras e ações da Prefeitura Municipal de Goiânia.',
+  openGraph: {
+    type: 'website',
+    title: 'Notícias de Goiânia • Prefeitura de Goiânia',
+    description: 'Sala de imprensa e jornalismo oficial da capital de Goiás.',
+    url: 'https://goiania.go.gov.br/noticias',
+    siteName: 'Prefeitura de Goiânia',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Notícias de Goiânia' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Notícias de Goiânia • Sala de Imprensa Oficial',
+    description: 'Notícias e avisos oficiais da Prefeitura de Goiânia.',
+    images: ['/og-image.png'],
+  },
+};
 
 export default async function NoticiasPage({
   searchParams,

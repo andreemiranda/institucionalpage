@@ -4,9 +4,45 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { formatPostDate, stripHtml } from '@/lib/utils';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import { ArrowLeft, ArrowRight, ChevronRight, Folder } from 'lucide-react';
 
 export const revalidate = 60;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const category = await getCategoryBySlug(slug);
+
+  if (!category) {
+    return {
+      title: 'Categoria não encontrada • Prefeitura de Goiânia',
+      description: 'Categoria de notícias não encontrada no portal.',
+    };
+  }
+
+  return {
+    title: `${category.name} • Notícias de Goiânia`,
+    description: `Notícias e comunicados oficiais da Prefeitura de Goiânia sobre ${category.name}.`,
+    openGraph: {
+      type: 'website',
+      title: `${category.name} • Prefeitura de Goiânia`,
+      description: `Todas as notícias e comunicados sobre ${category.name}.`,
+      url: `https://goiania.go.gov.br/categoria/${slug}`,
+      siteName: 'Prefeitura de Goiânia',
+      images: [{ url: '/og-image.png', width: 1200, height: 630, alt: category.name }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${category.name} • Prefeitura de Goiânia`,
+      description: `Notícias oficiais sobre ${category.name}.`,
+      images: ['/og-image.png'],
+    },
+  };
+}
 
 export default async function CategoryPage({
   params,

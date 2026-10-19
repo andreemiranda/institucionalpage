@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="380" height="90">
+  <defs>
+    <linearGradient id="goldGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF20C" />
+      <stop offset="100%" stop-color="#FAAE2B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Brasão Icon Emblem -->
+  <g transform="translate(10, 5) scale(0.4)">
+    <rect x="35" y="24" width="90" height="12" fill="url(#goldGradW)" rx="2" stroke="#FFFFFF" stroke-width="1.5" />
+    <path d="M 32 10 L 46 10 L 46 24 L 32 24 Z" fill="url(#goldGradW)" stroke="#FFFFFF" stroke-width="1.5" />
+    <path d="M 52 8 L 66 8 L 66 24 L 52 24 Z" fill="url(#goldGradW)" stroke="#FFFFFF" stroke-width="1.5" />
+    <path d="M 72 4 L 88 4 L 88 24 L 72 24 Z" fill="url(#goldGradW)" stroke="#FFFFFF" stroke-width="1.5" />
+    <path d="M 94 8 L 108 8 L 108 24 L 94 24 Z" fill="url(#goldGradW)" stroke="#FFFFFF" stroke-width="1.5" />
+    <path d="M 114 10 L 128 10 L 128 24 L 114 24 Z" fill="url(#goldGradW)" stroke="#FFFFFF" stroke-width="1.5" />
+
+    <path d="M 36 34 L 124 34 Q 124 100 120 120 C 114 144 80 162 80 162 C 80 162 46 144 40 120 Q 36 100 36 34 Z"
+          fill="#00473E" stroke="#FAAE2B" stroke-width="4" />
+    
+    <circle cx="80" cy="54" r="10" fill="url(#goldGradW)" />
+    <circle cx="56" cy="50" r="3" fill="#FFFFFF" />
+    <circle cx="104" cy="50" r="3" fill="#FFFFFF" />
+    <line x1="36" y1="80" x2="124" y2="80" stroke="#FAAE2B" stroke-width="3" />
+    <line x1="80" y1="80" x2="80" y2="124" stroke="#FAAE2B" stroke-width="3" />
+
+    <path d="M 26 166 Q 80 158 134 166 L 130 182 Q 80 174 30 182 Z" fill="#002e47" stroke="#FAAE2B" stroke-width="2" />
+    <text x="80" y="177" font-family="'Poppins', sans-serif, Arial" font-size="8.5" font-weight="900" fill="#FFFFFF" text-anchor="middle">GOIÂNIA</text>
+  </g>
+
+  <!-- Typography: PREFEITURA DE GOIÂNIA (White & Yellow/Orange for dark headers) -->
+  <g transform="translate(85, 20)">
+    <text x="0" y="24" font-family="'Poppins', sans-serif, Arial" font-size="24" font-weight="900" fill="#FFFFFF" letter-spacing="-0.5">
+      PREFEITURA
+    </text>
+    <text x="0" y="48" font-family="'Poppins', sans-serif, Arial" font-size="28" font-weight="900" fill="#FFFFFF" letter-spacing="-0.5">
+      DE <tspan fill="#FAAE2B">GOIÂNIA</tspan>
+    </text>
+    <text x="0" y="62" font-family="'Poppins', sans-serif, Arial" font-size="9" font-weight="700" fill="#E2E8F0" letter-spacing="2">
+      CAPITAL DE GOIÁS • PORTAL OFICIAL
+    </text>
+  </g>
+
+  <!-- 4-Color Accent Bars -->
+  <g transform="translate(365, 22)">
+    <rect x="0" y="0" width="4" height="11" fill="#fff20c" rx="1" />
+    <rect x="0" y="13" width="4" height="11" fill="#f36e22" rx="1" />
+    <rect x="0" y="26" width="4" height="11" fill="#114e23" rx="1" />
+    <rect x="0" y="39" width="4" height="11" fill="#003c5c" rx="1" />
+  </g>
+</svg>

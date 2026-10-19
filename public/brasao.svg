@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" width="160" height="200">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFDF6D" />
+      <stop offset="50%" stop-color="#FAAE2B" />
+      <stop offset="100%" stop-color="#C98000" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#006C5B" />
+      <stop offset="100%" stop-color="#003831" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E6B9E" />
+      <stop offset="100%" stop-color="#003856" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E24A32" />
+      <stop offset="100%" stop-color="#A52010" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Mural Crown (Coroa Mural - 5 visible towers) -->
+  <g id="crown" filter="url(#shadow)">
+    <rect x="35" y="24" width="90" height="12" fill="url(#goldGrad)" rx="2" stroke="#8A5800" stroke-width="1.5" />
+    <!-- Tower 1 -->
+    <path d="M 32 10 L 46 10 L 46 24 L 32 24 Z" fill="url(#goldGrad)" stroke="#8A5800" stroke-width="1.5" />
+    <polygon points="34,7 44,7 41,10 37,10" fill="#FFEAA0" />
+    <rect x="37" y="15" width="4" height="6" fill="#4B3000" rx="1" />
+    <!-- Tower 2 -->
+    <path d="M 52 8 L 66 8 L 66 24 L 52 24 Z" fill="url(#goldGrad)" stroke="#8A5800" stroke-width="1.5" />
+    <polygon points="54,5 64,5 61,8 57,8" fill="#FFEAA0" />
+    <rect x="57" y="13" width="4" height="7" fill="#4B3000" rx="1" />
+    <!-- Center Main Tower -->
+    <path d="M 72 4 L 88 4 L 88 24 L 72 24 Z" fill="url(#goldGrad)" stroke="#8A5800" stroke-width="1.5" />
+    <polygon points="74,1 86,1 83,4 77,4" fill="#FFEAA0" />
+    <rect x="78" y="10" width="4" height="8" fill="#4B3000" rx="1" />
+    <!-- Tower 4 -->
+    <path d="M 94 8 L 108 8 L 108 24 L 94 24 Z" fill="url(#goldGrad)" stroke="#8A5800" stroke-width="1.5" />
+    <polygon points="96,5 106,5 103,8 99,8" fill="#FFEAA0" />
+    <rect x="99" y="13" width="4" height="7" fill="#4B3000" rx="1" />
+    <!-- Tower 5 -->
+    <path d="M 114 10 L 128 10 L 128 24 L 114 24 Z" fill="url(#goldGrad)" stroke="#8A5800" stroke-width="1.5" />
+    <polygon points="116,7 126,7 123,10 119,10" fill="#FFEAA0" />
+    <rect x="119" y="15" width="4" height="6" fill="#4B3000" rx="1" />
+  </g>
+
+  <!-- Garlands (Branches of Coffee and Agriculture around shield) -->
+  <g id="branches" stroke="#005728" stroke-width="2" fill="none">
+    <!-- Left branch -->
+    <path d="M 34 80 C 18 105 20 135 45 155" />
+    <!-- Leaves Left -->
+    <ellipse cx="23" cy="95" rx="5" ry="3" transform="rotate(-30 23 95)" fill="#118041" stroke="#005728" />
+    <ellipse cx="18" cy="115" rx="6" ry="3.5" transform="rotate(-15 18 115)" fill="#118041" stroke="#005728" />
+    <ellipse cx="23" cy="133" rx="5" ry="3" transform="rotate(15 23 133)" fill="#118041" stroke="#005728" />
+    <ellipse cx="34" cy="148" rx="5" ry="3" transform="rotate(45 34 148)" fill="#118041" stroke="#005728" />
+    <!-- Coffee cherries Left -->
+    <circle cx="28" cy="105" r="2.5" fill="#C21C1C" />
+    <circle cx="25" cy="122" r="2.5" fill="#C21C1C" />
+    <circle cx="31" cy="138" r="2.5" fill="#C21C1C" />
+
+    <!-- Right branch -->
+    <path d="M 126 80 C 142 105 140 135 115 155" />
+    <!-- Leaves Right -->
+    <ellipse cx="137" cy="95" rx="5" ry="3" transform="rotate(30 137 95)" fill="#118041" stroke="#005728" />
+    <ellipse cx="142" cy="115" rx="6" ry="3.5" transform="rotate(15 142 115)" fill="#118041" stroke="#005728" />
+    <ellipse cx="137" cy="133" rx="5" ry="3" transform="rotate(-15 137 133)" fill="#118041" stroke="#005728" />
+    <ellipse cx="126" cy="148" rx="5" ry="3" transform="rotate(-45 126 148)" fill="#118041" stroke="#005728" />
+    <!-- Coffee cherries Right -->
+    <circle cx="132" cy="105" r="2.5" fill="#C21C1C" />
+    <circle cx="135" cy="122" r="2.5" fill="#C21C1C" />
+    <circle cx="129" cy="138" r="2.5" fill="#C21C1C" />
+  </g>
+
+  <!-- Main Samnite Shield (Escudo de Goiânia) -->
+  <g id="shield" filter="url(#shadow)">
+    <!-- Base Shield Outline and Clip -->
+    <path id="shieldPath" d="M 36 34 L 124 34 Q 124 100 120 120 C 114 144 80 162 80 162 C 80 162 46 144 40 120 Q 36 100 36 34 Z"
+          fill="#FFFFFF" stroke="#FAAE2B" stroke-width="4" />
+
+    <!-- Clip path to keep heraldic quarters inside -->
+    <clipPath id="shieldClip">
+      <path d="M 38 36 L 122 36 Q 122 100 118 118 C 112 142 80 160 80 160 C 80 160 48 142 42 118 Q 38 100 38 36 Z" />
+    </clipPath>
+
+    <g clip-path="url(#shieldClip)">
+      <!-- Top Quarter (Blue Sky / Southern Cross stars) -->
+      <rect x="36" y="34" width="88" height="42" fill="url(#blueGrad)" />
+      <!-- Golden Sun with Rays in Upper Chief -->
+      <circle cx="80" cy="50" r="9" fill="url(#goldGrad)" stroke="#FFEAA0" stroke-width="1" />
+      <g stroke="url(#goldGrad)" stroke-width="2">
+        <line x1="80" y1="37" x2="80" y2="40" />
+        <line x1="80" y1="60" x2="80" y2="63" />
+        <line x1="67" y1="50" x2="70" y2="50" />
+        <line x1="90" y1="50" x2="93" y2="50" />
+        <line x1="71" y1="41" x2="73" y2="43" />
+        <line x1="89" y1="41" x2="87" y2="43" />
+        <line x1="71" y1="59" x2="73" y2="57" />
+        <line x1="89" y1="59" x2="87" y2="57" />
+      </g>
+      <!-- Southern Cross 5 Stars -->
+      <polygon points="56,44 57,47 60,47 57.5,49 58.5,52 56,50 53.5,52 54.5,49 52,47 55,47" fill="#FFFFFF" transform="scale(0.7) translate(24, 18)" />
+      <polygon points="104,44 105,47 108,47 105.5,49 106.5,52 104,50 101.5,52 102.5,49 100,47 103,47" fill="#FFFFFF" transform="scale(0.7) translate(46, 18)" />
+
+      <!-- Horizontal Partition Ribbon -->
+      <line x1="36" y1="76" x2="124" y2="76" stroke="#FAAE2B" stroke-width="2.5" />
+
+      <!-- Middle-Left Quarter (Green Field / Cerrado & Ox symbol) -->
+      <rect x="36" y="77" width="44" height="42" fill="url(#greenGrad)" />
+      <!-- Ox / Cattle Head Symbol for Livestock of Goiás -->
+      <path d="M 52 87 Q 58 83 64 87 L 62 93 Q 58 97 54 93 Z" fill="url(#goldGrad)" stroke="#8A5800" stroke-width="0.8" />
+      <path d="M 50 86 Q 47 80 44 83 Q 48 85 52 88" fill="url(#goldGrad)" stroke="#8A5800" stroke-width="0.8" />
+      <path d="M 66 86 Q 69 80 72 83 Q 68 85 64 88" fill="url(#goldGrad)" stroke="#8A5800" stroke-width="0.8" />
+
+      <!-- Middle-Right Quarter (Red / Work & Industry cogwheel) -->
+      <rect x="80" y="77" width="44" height="42" fill="url(#redGrad)" />
+      <!-- Cogwheel gear -->
+      <circle cx="102" cy="94" r="7" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-dasharray="4,2" />
+      <circle cx="102" cy="94" r="3.5" fill="url(#goldGrad)" />
+
+      <!-- Vertical divider between middle quarters -->
+      <line x1="80" y1="76" x2="80" y2="120" stroke="#FAAE2B" stroke-width="2.5" />
+
+      <!-- Lower Base (Emerald Green & Golden City Horizon) -->
+      <rect x="36" y="119" width="88" height="45" fill="url(#greenGrad)" />
+      <line x1="36" y1="119" x2="124" y2="119" stroke="#FAAE2B" stroke-width="2.5" />
+      <!-- Modern City Monuments outline (Teatro Goiânia & Grande Hotel Art Déco) -->
+      <path d="M 50 145 L 56 132 L 64 132 L 68 145 L 76 136 L 84 136 L 90 145 L 98 130 L 106 130 L 110 145 Z" fill="#FAAE2B" opacity="0.85" />
+    </g>
+
+    <!-- Inner gold border trim -->
+    <path d="M 40 38 L 120 38 Q 120 98 116 116 C 110 138 80 156 80 156 C 80 156 50 138 44 116 Q 40 98 40 38 Z"
+          fill="none" stroke="#FFEAA0" stroke-width="1.2" opacity="0.7" />
+  </g>
+
+  <!-- Bottom Heraldic Ribbon / Scroll (Faixa com lema) -->
+  <g id="scroll" filter="url(#shadow)">
+    <!-- Ribbon background folds -->
+    <path d="M 22 172 L 40 162 L 40 178 Z" fill="#144C3E" />
+    <path d="M 138 172 L 120 162 L 120 178 Z" fill="#144C3E" />
+    <!-- Ribbon tail cuts -->
+    <path d="M 16 178 L 32 165 L 32 181 L 22 175 L 16 182 Z" fill="#003831" stroke="#FAAE2B" stroke-width="1" />
+    <path d="M 144 178 L 128 165 L 128 181 L 138 175 L 144 182 Z" fill="#003831" stroke="#FAAE2B" stroke-width="1" />
+    <!-- Main Ribbon Banner -->
+    <path d="M 26 166 Q 80 158 134 166 L 130 182 Q 80 174 30 182 Z" fill="url(#greenGrad)" stroke="#FAAE2B" stroke-width="1.5" />
+    <!-- Motto Text: "PELA GRANDEZA DA PÁTRIA" or "GOIÂNIA 1933" -->
+    <text x="80" y="176.5" font-family="'Poppins', sans-serif, Arial" font-size="7.5" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
+      GOIÂNIA • 1933
+    </text>
+  </g>
+</svg>

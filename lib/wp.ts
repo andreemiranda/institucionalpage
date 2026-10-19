@@ -418,6 +418,114 @@ export async function getCategoryBySlug(slug: string): Promise<WPCategory | null
   return found || null;
 }
 
+export const FALLBACK_PAGES: WPPage[] = [
+  {
+    id: 113090,
+    date: '2026-08-07T09:29:52',
+    slug: 'cadastro-certo',
+    title: { rendered: 'Cadastro Certo • Atualização Imobiliária' },
+    content: {
+      rendered: `
+        <p>O Cadastro Certo é uma iniciativa da Prefeitura de Goiânia para manter atualizadas as informações dos imóveis da Capital e aproximar os registros municipais da realidade da cidade que cresce continuamente.</p>
+        <p>Mais do que atualizar dados, o trabalho fortalece a qualidade das informações, a justiça fiscal e o diálogo com o cidadão que participa de todo o processo com transparência e segurança.</p>
+        <h2>Como Funciona a Atualização Cadastral</h2>
+        <p>O cidadão pode conferir os dados cadastrais do seu imóvel diretamente pelo portal da Prefeitura ou comparecer a uma unidade do Atende Fácil munido de documentos comprobatórios.</p>
+        <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube">
+          <div class="wp-block-embed__wrapper">https://www.youtube.com/watch?v=0k5iZ4-w8mQ</div>
+        </figure>
+        <h3>Canais de Atendimento</h3>
+        <ul>
+          <li>Portal Oficial: www.goiania.go.gov.br</li>
+          <li>Atende Fácil Paço Municipal: Av. do Cerrado, 999</li>
+          <li>Telefone e WhatsApp da Sefin: (62) 3524-1000</li>
+        </ul>
+      `,
+    },
+  },
+  {
+    id: 113091,
+    date: '2026-01-15T10:00:00',
+    slug: 'sobre-a-prefeitura',
+    title: { rendered: 'Sobre a Prefeitura Municipal de Goiânia' },
+    content: {
+      rendered: `
+        <p>Goiânia foi planejada na década de 1930 pelo engenheiro e urbanista Attilio Corrêa Lima, com plano e traçados executados por Armando de Godoy. Conhecida internacionalmente por seu acervo arquitetônico no estilo Art Déco e suas extensas áreas verdes, Goiânia destaca-se como polo econômico, educacional e de saúde do Centro-Oeste brasileiro.</p>
+        <h2>Estrutura do Poder Executivo</h2>
+        <p>A Prefeitura de Goiânia é o órgão máximo do Poder Executivo Municipal, sediada no <strong>Palácio das Campinas Venerando de Freitas Borges (Paço Municipal)</strong>, localizado no Park Lozandes. A administração é composta por Secretarias Municipais, Agências e Companhias com a missão de prover serviços públicos de qualidade em saúde, educação, infraestrutura, mobilidade, meio ambiente e assistência social.</p>
+        <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube">
+          <div class="wp-block-embed__wrapper">https://www.youtube.com/watch?v=kXRw_6y2W84</div>
+        </figure>
+        <h2>Compromissos da Gestão</h2>
+        <ul>
+          <li><strong>Inovação e Governo Digital:</strong> Mais de 80% dos serviços acessíveis pela internet.</li>
+          <li><strong>Zeladoria e Sustentabilidade:</strong> Preservação dos parques urbanos e arborização da capital.</li>
+          <li><strong>Saúde e Educação Integrada:</strong> Modernização das unidades de pronto-atendimento e CMEIs.</li>
+          <li><strong>Transparência Total:</strong> Dados abertos, prestação de contas diária e ouvidoria cidadã.</li>
+        </ul>
+      `,
+    },
+  },
+  {
+    id: 113092,
+    date: '2026-01-10T08:00:00',
+    slug: 'portal-da-transparencia',
+    title: { rendered: 'Portal da Transparência Municipal' },
+    content: {
+      rendered: `
+        <p>O Portal da Transparência da Prefeitura de Goiânia é o instrumento oficial de controle social e acesso à informação pública previsto na Lei de Responsabilidade Fiscal e na Lei de Acesso à Informação (Lei nº 12.527/2011).</p>
+        <h2>Consultas Disponíveis em Tempo Real</h2>
+        <ul>
+          <li><strong>Receitas e Despesas:</strong> Acompanhamento detalhado da arrecadação e execução orçamentária.</li>
+          <li><strong>Licitações e Contratos:</strong> Editais em andamento, atas de registro de preços e termos contratuais.</li>
+          <li><strong>Folha de Pagamento:</strong> Remuneração dos servidores públicos ativos e inativos da administração direta e indireta.</li>
+          <li><strong>Obras Públicas:</strong> Medições financeiras, cronogramas de entrega e empresas executoras.</li>
+        </ul>
+        <p>Para dúvidas, pedidos de dados ou recursos de informação, acesse também a nossa Ouvidoria Geral pelo telefone 156.</p>
+      `,
+    },
+  },
+  {
+    id: 113093,
+    date: '2026-01-05T09:00:00',
+    slug: 'ouvidoria-e-acesso-a-informacao',
+    title: { rendered: 'Ouvidoria Geral e e-SIC (Acesso à Informação)' },
+    content: {
+      rendered: `
+        <p>A Ouvidoria Geral do Município de Goiânia é o canal direto entre o cidadão e a administração pública municipal, acolhendo solicitações, denúncias, reclamações, sugestões e elogios com respeito, celeridade e transparência.</p>
+        <h2>Como se Manifestar</h2>
+        <p>Qualquer cidadão pode registrar sua manifestação de forma anônima ou identificada pelos seguintes canais:</p>
+        <ul>
+          <li><strong>Telefone 156:</strong> Atendimento de segunda a sexta-feira, das 07h às 19h.</li>
+          <li><strong>E-mail institucional:</strong> ouvidoria@goiania.go.gov.br</li>
+          <li><strong>e-SIC Digital:</strong> Sistema Eletrônico do Serviço de Informação ao Cidadão.</li>
+          <li><strong>Presencial:</strong> Sede do Paço Municipal (Park Lozandes) ou unidades do Atende Fácil.</li>
+        </ul>
+        <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube">
+          <div class="wp-block-embed__wrapper">https://www.youtube.com/watch?v=3-7iP-c4QfM</div>
+        </figure>
+      `,
+    },
+  },
+  {
+    id: 113094,
+    date: '2026-01-02T11:00:00',
+    slug: 'iptu-2026',
+    title: { rendered: 'IPTU e ITU 2026 • Orientações e Pagamento' },
+    content: {
+      rendered: `
+        <p>O Imposto Predial e Territorial Urbano (IPTU) e o Imposto Territorial Urbano (ITU) do exercício de 2026 contam com facilidades de pagamento, desconto especial para quitação em cota única e parcelamento em até 11 vezes sem juros.</p>
+        <h2>Benefícios e Descontos</h2>
+        <ul>
+          <li><strong>Cota Única com 10% de desconto:</strong> Para pagamentos realizados até a data do primeiro vencimento.</li>
+          <li><strong>Parcelamento facilitado:</strong> Em até 11 parcelas mensais e sucessivas.</li>
+          <li><strong>Isenção Social:</strong> Imóveis residenciais com valor venal enquadrado nos critérios da lei municipal.</li>
+        </ul>
+        <p>Acesse a 2ª via da sua guia (DUAM) informando o número da inscrição cadastral do seu imóvel no portal oficial ou pelo WhatsApp da Prefeitura.</p>
+      `,
+    },
+  },
+];
+
 export async function getPages(): Promise<WPPage[]> {
   try {
     const controller = new AbortController();
@@ -426,28 +534,20 @@ export async function getPages(): Promise<WPPage[]> {
     const res = await fetch(`${WP_API_URL}/pages?per_page=20`, {
       headers: FETCH_HEADERS,
       signal: controller.signal,
-      next: { revalidate: 3600 }
+      next: { revalidate: 3600 },
     });
     clearTimeout(timeout);
 
     const contentType = res.headers.get('content-type') || '';
     if (res.ok && contentType.includes('application/json')) {
       const pages = await res.json();
-      if (Array.isArray(pages)) return pages;
+      if (Array.isArray(pages) && pages.length > 0) return pages;
     }
   } catch {
     // Graceful fallback
   }
 
-  return [
-    {
-      id: 113090,
-      date: '2026-08-07T09:29:52',
-      slug: 'cadastro-certo',
-      title: { rendered: 'Cadastro Certo' },
-      content: { rendered: '<p>O Cadastro Certo é uma iniciativa da Prefeitura de Goiânia para manter atualizadas as informações dos imóveis da Capital.</p>' }
-    }
-  ];
+  return FALLBACK_PAGES;
 }
 
 export async function getPageBySlug(slug: string): Promise<WPPage | null> {
@@ -458,7 +558,7 @@ export async function getPageBySlug(slug: string): Promise<WPPage | null> {
     const res = await fetch(`${WP_API_URL}/pages?slug=${slug}`, {
       headers: FETCH_HEADERS,
       signal: controller.signal,
-      next: { revalidate: 120 }
+      next: { revalidate: 120 },
     });
     clearTimeout(timeout);
 
@@ -473,15 +573,7 @@ export async function getPageBySlug(slug: string): Promise<WPPage | null> {
     // Graceful fallback
   }
 
-  if (slug === 'cadastro-certo') {
-    return {
-      id: 113090,
-      date: '2026-08-07T09:29:52',
-      slug: 'cadastro-certo',
-      title: { rendered: 'Cadastro Certo' },
-      content: { rendered: '<p>O Cadastro Certo é uma iniciativa da Prefeitura de Goiânia para manter atualizadas as informações dos imóveis da Capital e aproximar os registros municipais da realidade da cidade que cresce cada vez mais.</p><p>Mais do que atualizar dados, o trabalho fortalece a qualidade das informações, a justiça fiscal e o diálogo com o cidadão que participa de todo o processo com transparência e segurança.</p>' }
-    };
-  }
-
-  return null;
+  const found = FALLBACK_PAGES.find((p) => p.slug === slug);
+  return found || null;
 }
+

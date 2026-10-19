@@ -10,6 +10,20 @@ import {
 export const metadata = {
   title: 'Portal da Transparência • Prefeitura de Goiânia',
   description: 'Acompanhe as receitas, despesas, licitações, folha de pagamento e dados orçamentários do município de Goiânia.',
+  openGraph: {
+    type: 'website',
+    title: 'Portal da Transparência • Prefeitura de Goiânia',
+    description: 'Receitas, despesas, licitações, contratos e folha de pagamento do município.',
+    url: 'https://goiania.go.gov.br/transparencia',
+    siteName: 'Prefeitura de Goiânia',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Transparência Goiânia' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Portal da Transparência • Goiânia',
+    description: 'Acompanhamento fiscal e prestação de contas do município.',
+    images: ['/og-image.png'],
+  },
 };
 
 export default function TransparenciaPage() {

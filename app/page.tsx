@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { getPosts, getCategories } from '@/lib/wp';
 import { formatPostDate, stripHtml } from '@/lib/utils';
 import { QuickAccessHub } from '@/components/QuickAccessHub';
+import { VideoSection } from '@/components/VideoSection';
 import { 
   ArrowRight, 
   Play, 
@@ -233,85 +234,8 @@ export default async function Home() {
         </section>
 
         {/* Goiânia Conectada / Seção de Vídeos Oficiais */}
-        <section className="bg-gradient-to-br from-[#002e47] to-[#003856] text-white rounded-2xl p-6 sm:p-10 shadow-lg">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 border-b border-white/10 pb-6">
-            <div>
-              <span className="text-[#f36e22] text-xs font-extrabold uppercase tracking-widest block mb-1">
-                Comunicação & Multimídia
-              </span>
-              <h2 className="text-2xl md:text-3xl font-black text-white">
-                Goiânia em Vídeo
-              </h2>
-            </div>
-            <a
-              href="https://www.youtube.com/user/PrefeituraDeGoiania"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#f36e22] hover:bg-[#f27730] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-full transition-all"
-            >
-              <span>Canal Oficial no YouTube</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-colors">
-              <div className="relative aspect-video rounded-lg overflow-hidden bg-black mb-3 flex items-center justify-center group cursor-pointer">
-                <Image
-                  src="https://www.goiania.go.gov.br/wp-content/themes/prefeitura-goiania/assets/images/logo.png"
-                  alt="Ações da Saúde"
-                  width={200}
-                  height={80}
-                  className="opacity-40 brightness-0 invert"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-[#f36e22] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <Play className="w-5 h-5 fill-white ml-0.5" />
-                  </div>
-                </div>
-              </div>
-              <h4 className="font-bold text-sm text-white mb-1">Modernização da Saúde Municipal</h4>
-              <p className="text-xs text-slate-300">Vistorias técnicas e novos equipamentos em UPAs e Cais da capital.</p>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-colors">
-              <div className="relative aspect-video rounded-lg overflow-hidden bg-black mb-3 flex items-center justify-center group cursor-pointer">
-                <Image
-                  src="https://www.goiania.go.gov.br/wp-content/themes/prefeitura-goiania/assets/images/logo.png"
-                  alt="Obras e Mobilidade"
-                  width={200}
-                  height={80}
-                  className="opacity-40 brightness-0 invert"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-[#f36e22] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <Play className="w-5 h-5 fill-white ml-0.5" />
-                  </div>
-                </div>
-              </div>
-              <h4 className="font-bold text-sm text-white mb-1">Obras e Pavimentação Asfáltica</h4>
-              <p className="text-xs text-slate-300">Avanço do recapeamento e infraestrutura viária em bairros de Goiânia.</p>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-colors">
-              <div className="relative aspect-video rounded-lg overflow-hidden bg-black mb-3 flex items-center justify-center group cursor-pointer">
-                <Image
-                  src="https://www.goiania.go.gov.br/wp-content/themes/prefeitura-goiania/assets/images/logo.png"
-                  alt="Educação e CMEIs"
-                  width={200}
-                  height={80}
-                  className="opacity-40 brightness-0 invert"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-[#f36e22] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <Play className="w-5 h-5 fill-white ml-0.5" />
-                  </div>
-                </div>
-              </div>
-              <h4 className="font-bold text-sm text-white mb-1">Inovação e Tecnologia nas Escolas</h4>
-              <p className="text-xs text-slate-300">Distribuição de kits pedagógicos e robótica para alunos da rede municipal.</p>
-            </div>
-          </div>
+        <section>
+          <VideoSection />
         </section>
 
         {/* Atendimento Presencial - Unidades Atende Fácil */}

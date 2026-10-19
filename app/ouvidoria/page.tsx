@@ -13,8 +13,22 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Ouvidoria Geral do Município • Prefeitura de Goiânia',
+  title: 'Ouvidoria Geral do Município • Central 156 • Goiânia',
   description: 'Canal de diálogo direto entre o cidadão e a Prefeitura de Goiânia. Registre reclamações, denúncias, solicitações ou elogios.',
+  openGraph: {
+    type: 'website',
+    title: 'Ouvidoria Geral do Município • Central 156',
+    description: 'Canal de manifestações, reclamações, denúncias e elogios do cidadão de Goiânia.',
+    url: 'https://goiania.go.gov.br/ouvidoria',
+    siteName: 'Prefeitura de Goiânia',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Ouvidoria Goiânia' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ouvidoria Geral • Central 156',
+    description: 'Canal de diálogo do cidadão com a Prefeitura de Goiânia.',
+    images: ['/og-image.png'],
+  },
 };
 
 export default function OuvidoriaPage() {
