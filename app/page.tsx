@@ -158,15 +158,15 @@ export default async function Home() {
           )}
 
           {/* Category Quick Tags */}
-          <div className="bg-slate-100 p-3 rounded-xl flex items-center gap-2 overflow-x-auto text-xs font-bold text-[#002e47]">
-            <span className="text-slate-400 uppercase tracking-wider shrink-0 mr-2 flex items-center gap-1">
+          <div className="bg-slate-100 p-3.5 rounded-xl flex flex-wrap items-center gap-2 text-xs font-bold text-[#002e47]">
+            <span className="text-slate-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1 font-semibold">
               <TrendingUp className="w-3.5 h-3.5" /> Assuntos:
             </span>
-            {categories.slice(0, 10).map((cat) => (
+            {categories.slice(0, 12).map((cat) => (
               <Link
                 key={cat.id}
                 href={`/categoria/${cat.slug}`}
-                className="whitespace-nowrap px-3 py-1.5 rounded-lg bg-white hover:bg-[#f36e22] hover:text-white transition-colors shadow-2xs shrink-0"
+                className="px-3 py-1.5 rounded-lg bg-white hover:bg-[#f36e22] hover:text-white transition-colors shadow-2xs border border-slate-200/60"
               >
                 {cat.name} ({cat.count})
               </Link>

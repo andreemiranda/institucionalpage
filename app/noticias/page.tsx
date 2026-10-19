@@ -85,10 +85,10 @@ export default async function NoticiasPage({
       </div>
 
       {/* Filter Categories Chips */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 text-xs font-bold scrollbar-thin">
+      <div className="flex flex-wrap items-center gap-2 pb-2 text-xs font-bold">
         <Link
           href="/noticias"
-          className={`px-3 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
+          className={`px-3 py-1.5 rounded-lg transition-colors ${
             !categoryId 
               ? 'bg-[#002e47] text-white shadow-xs' 
               : 'bg-white text-[#002e47] border border-slate-200 hover:border-[#f36e22]'
@@ -100,7 +100,7 @@ export default async function NoticiasPage({
           <Link
             key={cat.id}
             href={`/noticias?category=${cat.id}`}
-            className={`px-3 py-1.5 rounded-lg whitespace-nowrap transition-colors ${
+            className={`px-3 py-1.5 rounded-lg transition-colors ${
               categoryId === cat.id 
                 ? 'bg-[#f36e22] text-white shadow-xs' 
                 : 'bg-white text-[#002e47] border border-slate-200 hover:border-[#f36e22]'

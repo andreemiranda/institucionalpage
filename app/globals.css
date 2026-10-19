@@ -210,3 +210,61 @@ body {
   color: var(--emerald);
   text-decoration: underline;
 }
+
+/* ==========================================================================
+   Custom Scrollbar (Barra de rolagem estilizada com as cores do portal)
+   ========================================================================== */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--navy-light) #e2e7e9;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e7e9;
+  border-left: 1px solid #ccd3d5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #003856 0%, #002e47 100%);
+  border-radius: 9999px;
+  border: 2px solid #e2e7e9;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f36e22 0%, #d85c16 100%);
+  border: 2px solid #e2e7e9;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #f27730;
+}
+
+::-webkit-scrollbar-corner {
+  background: #e2e7e9;
+}
+
+/* Alto contraste para barra de rolagem */
+body.alto_contraste,
+body.alto_contraste * {
+  scrollbar-color: #ffff00 #000000 !important;
+}
+
+body.alto_contraste ::-webkit-scrollbar-track {
+  background: #000000 !important;
+  border-left: 1px solid #333333 !important;
+}
+
+body.alto_contraste ::-webkit-scrollbar-thumb {
+  background: #ffff00 !important;
+  border: 2px solid #000000 !important;
+}
+
+body.alto_contraste ::-webkit-scrollbar-thumb:hover {
+  background: #ffffff !important;
+}
