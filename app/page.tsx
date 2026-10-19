@@ -181,7 +181,14 @@ export default async function Home() {
               <Newspaper className="w-5 h-5 text-[#f36e22]" />
               <span>Notícias Recentes da Capital</span>
             </h3>
-            <span className="text-xs text-slate-500">Atualizado via API WordPress</span>
+            {/* Backend: Dados de notícias sincronizados via API REST v2 do WordPress no servidor via ISR */}
+            <Link
+              href="/noticias"
+              className="text-xs font-bold text-[#002e47] hover:text-[#f36e22] transition-colors flex items-center gap-1 group"
+            >
+              <span>Ver todas as notícias</span>
+              <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

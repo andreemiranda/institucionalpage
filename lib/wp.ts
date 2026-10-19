@@ -1,3 +1,10 @@
+/**
+ * Backend / Data Access Layer:
+ * Integração e sincronização com a API REST v2 do WordPress da Prefeitura Municipal de Goiânia (https://www.goiania.go.gov.br).
+ * O consumo é realizado estritamente no servidor (Server Components e Next.js Cache com ISR),
+ * garantindo segurança, performance, sanitização prévia de conteúdo e conformidade
+ * com os padrões institucionais de comunicação pública.
+ */
 export const WP_API_URL = 'https://www.goiania.go.gov.br/wp-json/wp/v2';
 
 export interface WPPost {

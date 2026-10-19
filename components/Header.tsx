@@ -276,7 +276,7 @@ export function Header() {
                 {/* Instant search preview results */}
                 {isSearching && (
                   <div className="mt-3 text-xs text-slate-500 py-2 text-center animate-pulse">
-                    Buscando na API da Prefeitura...
+                    Pesquisando no portal da Prefeitura...
                   </div>
                 )}
 
