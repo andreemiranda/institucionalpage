@@ -14,6 +14,8 @@ import {
   AlertCircle,
 } from 'lucide-react';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'IPTU e ITU 2026 • Consulta, 2ª Via e Calendário • Goiânia',
   description:

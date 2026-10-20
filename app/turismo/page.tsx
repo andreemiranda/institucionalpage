@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import { RenderHtml } from '@/components/RenderHtml';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'Turismo em Goiânia • Roteiros, Parques e Patrimônio Art Déco',
   description:

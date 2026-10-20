@@ -12,6 +12,8 @@ import {
   Lock,
 } from 'lucide-react';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'Portal do Servidor Municipal • Holerite e Benefícios • Goiânia',
   description:

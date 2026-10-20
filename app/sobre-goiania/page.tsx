@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { Trees, Landmark, Building } from 'lucide-react';
 
+export const revalidate = 60;
+
 export const metadata = {
   title: 'Sobre Goiânia • A Capital Verde do Brasil',
   description: 'Conheça a história, o patrimônio Art Déco, os parques urbanos e os dados gerais de Goiânia, capital de Goiás.',

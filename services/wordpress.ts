@@ -37,8 +37,9 @@ async function fetchWP<T>(endpoint: string, options: RequestInit = {}, timeoutMs
         ...options.headers,
       },
       next: {
-        revalidate: 180, // Cache for 3 minutes for high responsiveness
-        ...((options as { next?: { revalidate?: number } }).next || {}),
+        revalidate: 60, // 60 seconds continuous ISR synchronization
+        tags: ['wordpress'],
+        ...((options as { next?: { revalidate?: number; tags?: string[] } }).next || {}),
       },
     });
 

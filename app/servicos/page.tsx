@@ -9,6 +9,8 @@ import {
   Calendar
 } from 'lucide-react';
 
+export const revalidate = 60;
+
 export const metadata = {
   title: 'Carta de Serviços ao Cidadão • Prefeitura de Goiânia',
   description: 'Guia completo de serviços municipais, emissão de guias, agendamentos, licenças e requerimentos.',

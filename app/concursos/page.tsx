@@ -11,6 +11,8 @@ import {
   Clock,
 } from 'lucide-react';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'Concursos e Seleções Públicas • Prefeitura de Goiânia',
   description:

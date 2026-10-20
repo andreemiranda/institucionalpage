@@ -11,6 +11,8 @@ import {
   Landmark
 } from 'lucide-react';
 
+export const revalidate = 60;
+
 export const metadata = {
   title: 'Estrutura Organizacional • Prefeitura de Goiânia',
   description: 'Conheça todas as secretarias municipais, agências, fundações e órgãos da administração pública de Goiânia.',

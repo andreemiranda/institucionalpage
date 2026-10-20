@@ -20,6 +20,8 @@ import {
 } from 'lucide-react';
 import { SECRETARIAS_LIST } from '@/lib/data';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'Secretarias Municipais e Órgãos • Prefeitura de Goiânia',
   description:

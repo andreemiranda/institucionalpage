@@ -12,6 +12,8 @@ import {
 } from 'lucide-react';
 import { SERVICOS_LIST } from '@/lib/data';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'Portal da Empresa • Empreendedorismo & NFS-e • Goiânia',
   description:

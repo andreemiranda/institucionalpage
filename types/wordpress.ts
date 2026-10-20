@@ -92,6 +92,12 @@ export interface WPPost {
   format?: string;
   categories: number[];
   tags: number[];
+  acf?: {
+    link_video?: string;
+    video_url?: string;
+    youtube_id?: string;
+    [key: string]: unknown;
+  };
   _embedded?: WPEmbedded;
 }
 

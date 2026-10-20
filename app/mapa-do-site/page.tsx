@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { getCategories } from '@/lib/wp';
 import { Map } from 'lucide-react';
 
+export const revalidate = 60;
+
 export const metadata = {
   title: 'Mapa do Site • Prefeitura de Goiânia',
   description: 'Estrutura completa de navegação de todas as seções e serviços do portal da Prefeitura de Goiânia.',

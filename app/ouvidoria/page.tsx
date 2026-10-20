@@ -12,6 +12,8 @@ import {
   Mail
 } from 'lucide-react';
 
+export const revalidate = 60;
+
 export const metadata = {
   title: 'Ouvidoria Geral do Município • Central 156 • Goiânia',
   description: 'Canal de diálogo direto entre o cidadão e a Prefeitura de Goiânia. Registre reclamações, denúncias, solicitações ou elogios.',

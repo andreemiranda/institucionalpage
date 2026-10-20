@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { Eye, Keyboard, CheckCircle } from 'lucide-react';
 
+export const revalidate = 60;
+
 export const metadata = {
   title: 'Acessibilidade e Teclas de Atalho • Prefeitura de Goiânia',
   description: 'Conheça os recursos de acessibilidade digital, atalhos de navegação pelo teclado e padrões de conformidade do portal da Prefeitura de Goiânia.',

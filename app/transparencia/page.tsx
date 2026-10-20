@@ -7,6 +7,8 @@ import {
   CheckCircle
 } from 'lucide-react';
 
+export const revalidate = 60;
+
 export const metadata = {
   title: 'Portal da Transparência • Prefeitura de Goiânia',
   description: 'Acompanhe as receitas, despesas, licitações, folha de pagamento e dados orçamentários do município de Goiânia.',
